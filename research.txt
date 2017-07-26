@@ -18,7 +18,19 @@ Future Improvements:
 
 Important Links:
 
+Emojis-
+http://www.utf8-chartable.de/unicode-utf8-table.pl?start=9728
+https://dev.twitter.com/oauth/overview/percent-encoding-parameters
 
+Attaching photo to web intent-
+https://twittercommunity.com/t/attach-a-photo-to-a-web-intent/33677/3
 
+POST-
+https://dev.twitter.com/rest/reference/post/statuses/update
 
+Web Intents-
+https://dev.twitter.com/web/tweet-button/web-intent
+https://dev.twitter.com/web/intents#tweet-intent
 
+App-
+https://apps.twitter.com/app/14052993
