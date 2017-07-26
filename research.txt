@@ -1,0 +1,24 @@
+Part 1: Web Intents
+-make interface for tweet
+-include emoji options
+-generate unicode/url encoded string to append to web intent url
+-use google url shortener api to make link
+-HTML/CSS/JS
+-figure out if need/how use twitter auth/api...
+
+
+Part 2: Custom Web Intent
+- expland functionality to include uploading media
+- link can bring to edit screen or directly post?
+
+
+Future Improvements:
+-click stats...
+
+
+Important Links:
+
+
+
+
+
