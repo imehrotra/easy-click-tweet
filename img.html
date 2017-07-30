@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script type="text/javascript">
+        function ImageButton1_OnClientClick(objImageButton)
+        {
+            var TextArea1 = document.getElementById('TextArea1');
+            
+
+            var Image1 = new Image();
+            Image1.src = objImageButton.src;
+            
+
+            TextArea1.appendChild(Image1);
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <textarea id="TextArea1" cols="100" rows="10"></textarea>
+        <br />
+        <asp:ImageButton ID="ImageButton1" ImageUrl="weber_logo.jpg"  runat="server"
+        OnClientClick="return ImageButton1_OnClientClick(this);"/>
+    </div>
+    </form>
+</body>
+</html>

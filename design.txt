@@ -1,0 +1,40 @@
+DESIGN
+
+1. Design framework of page
+  - title
+  - text area (div)
+  - style
+  - emoji drop down
+  - submit button that generates link and prints it
+
+2. content edible div that can have images appended
+
+3. emoji drop down that appends to text
+
+4. submit that uses link generating algo
+
+--
+
+LINKS
+content-edible/emoji example:
+https://www.piliapp.com/twitter-symbols/
+
+dynamic insert text:
+https://stackoverflow.com/questions/11076975/insert-text-into-textarea-at-cursor-position-javascript
+
+https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_textarea_form
+😃
+
+https://www.w3schools.com/tags/tag_textarea.asp
+
+char count: http://jsfiddle.net/timur/47a7A/
+
+emoji-picker: https://github.com/OneSignal/emoji-picker
+--
+
+Problem: html forms (textarea) does not support images (read: emojis)
+
+Solution:
+Instead of using html form, use contentEdible div to which images can be appended.
+
+EDIT: Unicode emojis work!!
