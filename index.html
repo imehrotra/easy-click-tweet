@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Easy Click Tweet</title>
+</head>
+<body>
+<div class="outline">
+<div class="title">Easy Click Tweet</div>
+<div>
+	<form class="form">
+		<textarea id="content" class="field-style" rows="6" cols="70" placeholder="Message to tweet to the masses"></textarea>
+		<input type="submit" value="Get Link!" />
+	</form>
+</div>
+<div class="blank"></div>
+</div>
+<style type="text/css">
+	.outline {
+		background-color: #34373d;/*#103268;*/
+		border-radius: 5px;
+		padding: 20px;
+		font-size: 150%;
+		width: 40vw;
+		height: 100vh;
+		margin: 0 auto;
+
+		display: grid;
+		grid-gap: 10px;
+    	grid-template-columns: 1fr;
+	    grid-template-areas:
+	           "title"
+	           "form"
+	           "blank";
+
+	}
+
+	.title {
+		color: #fff;
+		grid-area: title;
+		height: 10vh;
+	}
+
+	.form {
+		grid-area: form;
+		height: 20vh;
+	}
+	.blank {
+		height: 70vh;
+	}
+
+</style>
+
+</body>
+</html>
