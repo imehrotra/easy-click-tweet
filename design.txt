@@ -13,6 +13,8 @@ DESIGN
 
 4. submit that uses link generating algo
 
+5. character counter
+
 --
 
 LINKS
