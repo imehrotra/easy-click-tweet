@@ -59,6 +59,18 @@ function test() {
 
 //url shortener
 
+$.ajax({
+        url: 'https://www.googleapis.com/urlshortener/v1/url?shortUrl=http://goo.gl/fbsS&key=AIzaSyBFmYcn3yahS8ao6Zabkc7kaRbfEs_sIhE',
+        type: 'POST',
+        contentType: 'application/json; charset=utf-8',
+        data: '{ longUrl: "' + "www.ishamehrotra.com" +'"}',
+        dataType: 'json',
+        success: function(response) {
+            // var result = JSON.parse(response); // Evaluate the J-Son response object.
+            console.log(response);
+        }
+     });
+
 </script>
 
 <style type="text/css">
