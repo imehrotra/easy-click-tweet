@@ -11,7 +11,7 @@
 		<form class="form" action="#"><!-- onsubmit="test();" -->
 			<textarea id="textarea" class="field-style" rows="6" cols="82" maxlength="140" placeholder="Message to tweet to the masses"></textarea><br>
 			<div id="line">
-				<div id="button"><button id="click" onClick="test();">Get Link!</button><!-- <input id="submit" type="submit" value="Get Link!" onClick="test();" /> --></div>
+				<div id="button"><button id="click" >Get Link!</button><!-- <input id="submit" type="submit" value="Get Link!" onClick="test();" /> --></div>
 				<div id="textarea_feedback"></div>
 			</div>
 		</form>
@@ -29,48 +29,50 @@
 	    var text_max = 140;
 	    $('#textarea_feedback').html(text_max + ' characters remaining');
 	    $('#textarea_feedback').attr("style", "font-size:16px; color:white;");
-
 	    $('#textarea').keyup(function() {
 	        var text_length = $('#textarea').val().length;
 	        var text_remaining = text_max - text_length;
-
 	        $('#textarea_feedback').html(text_remaining + ' characters remaining');
 	    // console.log(document.getElementById("textarea").value);
-
 	    });
 	});
 
-
 // on click event...or rather submit form...
-// Select left input
+
 $(document).on('click', '#click', function() {
-	console.log("hi");
-	    console.log(document.getElementById("textarea").value);
+	var string = document.getElementById("textarea").value;
+	// console.log(string);
+	var res = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(string);
+	console.log(res);
+	urlshort(res);
 });
 
-function test() {
-	var string = document.getElementById("textarea").value;
-	console.log(string);
 
-	var res = "https://twitter.com/intent/tweet?text=" + encodeURI(string); //parse for # and url, rows cols
-	console.log(res);
-	alert(res);
-}
 //retweet functionality
 
 //url shortener
-
+function urlshort(res) {
 $.ajax({
         url: 'https://www.googleapis.com/urlshortener/v1/url?shortUrl=http://goo.gl/fbsS&key=AIzaSyBFmYcn3yahS8ao6Zabkc7kaRbfEs_sIhE',
         type: 'POST',
         contentType: 'application/json; charset=utf-8',
-        data: '{ longUrl: "' + "www.ishamehrotra.com" +'"}',
+        data: '{ longUrl: "' + res +'"}',
         dataType: 'json',
         success: function(response) {
-            // var result = JSON.parse(response); // Evaluate the J-Son response object.
-            console.log(response);
+            // console.log(response);
+            console.log(response.id);
         }
      });
+}
+
+// TO DO
+// parse for # and url
+// dynamic rows and cols
+// layout/design
+// retweet functionality
+// emoji keyboard
+// auto shorten urls
+
 
 </script>
 
@@ -88,7 +90,6 @@ $.ajax({
 #textarea_feedback {
 	grid-area: char;
 }
-
 	.body {
 		background: #3c4149;
 	}
@@ -100,7 +101,6 @@ $.ajax({
 		width: 70vw;
 		height: 100vh;
 		margin: 20px auto;
-
 		display: grid;
 		grid-gap: 10px;
     	grid-template-columns: 1fr;
@@ -109,26 +109,22 @@ $.ajax({
 	           "title"
 	           "form"
 	           "...";
-
 /*	    background: #FAFAFA;
 */	    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
 /*	    border: 6px solid #305A72;
 */	}
-
 	/* Outer Grid computer */
 	@media screen and (min-width: 900px) {
 	  .outline {
 			width: 40vw;
 	  }
 	}
-
 	.title {
 		color: white; /*#305A72;*/
 		grid-area: title;
 /*		height: 10vh;
 */		font-size: 170%;
 	}
-
 	.form {
 		grid-area: form;
 /*		height: 20vh;
@@ -136,7 +132,6 @@ $.ajax({
 /*	.blank {
 		height: 70vh;
 	}*/
-
 	input[type="submit"] {
 	    -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
 	    -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
@@ -150,7 +145,6 @@ $.ajax({
 	    text-decoration: none;
 	    font: 16px Arial, Helvetica, sans-serif;
 	}
-
 </style>
 
 </body>
