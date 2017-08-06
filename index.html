@@ -52,8 +52,9 @@ function test() {
 	var string = document.getElementById("textarea").value;
 	console.log(string);
 
-	var res = "https://twitter.com/intent/tweet?text=" + encodeURI(string); //parse for # and url
+	var res = "https://twitter.com/intent/tweet?text=" + encodeURI(string); //parse for # and url, rows cols
 	console.log(res);
+	alert(res);
 }
 //retweet functionality
 
