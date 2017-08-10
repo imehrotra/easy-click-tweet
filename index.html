@@ -2,6 +2,14 @@
 <html>
 <head>
 	<title>Easy Click Tweet</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/jquery.emojipicker.css">
+<script type="text/javascript" src="js/jquery.emojipicker.js"></script>
+
+<!-- Emoji Data -->
+<link rel="stylesheet" type="text/css" href="css/jquery.emojipicker.tw.css">
+<script type="text/javascript" src="js/jquery.emojis.js"></script>
 
 </head>
 <body>
@@ -23,10 +31,22 @@
 <!-- move footer? -->
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ -->
 <script type="text/javascript">
 	$(document).ready(function() {
+
+      // $('#create').click(function(e) {
+      //   e.preventDefault();
+      //   $('#text-custom-trigger').emojiPicker({
+      //     width: '300px',
+      //     height: '200px',
+      //     button: false
+      //   });
+      // });
+      $('#textarea').emojiPicker();
+
+
 	    var text_max = 140;
 	    $('#textarea_feedback').html(text_max + ' characters remaining');
 	    $('#textarea_feedback').attr("style", "font-size:16px; color:white;");
