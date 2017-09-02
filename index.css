@@ -27,9 +27,9 @@
 	.output {
 		grid-area: output;
 	}
-	.body {
-		background: #3c4149;
+	body {
         font-family: 'Roboto', sans-serif;
+        color: white;
 	}
 	.outline {
 		background-color: #3c4149;/*#00aced;/*#34373d;/*#103268;*/
