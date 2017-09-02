@@ -1,0 +1,72 @@
+	#line {
+			display: grid;
+			grid-gap: 10px;
+	    	grid-template-columns: 1fr 2fr 1.5fr;
+		    grid-template-areas:
+		           "button ... char";
+	}
+	#button {
+		grid-area: button;
+	}
+	#click {
+	    background-color: #00aced;
+	    border: none;
+	    color: white;
+	    padding: 15px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	    margin: 4px 2px;
+	    cursor: pointer;
+	    border-radius: 8px;
+	}
+	#textarea_feedback {
+		grid-area: char;
+	}
+	.output {
+		grid-area: output;
+	}
+	.body {
+		background: #3c4149;
+        font-family: 'Roboto', sans-serif;
+	}
+	.outline {
+		background-color: #3c4149;/*#00aced;/*#34373d;/*#103268;*/
+		border-radius: 10px;
+		padding: 20px;
+		font-size: 150%;
+		width: 70vw;
+		height: 100vh;
+		margin: 20px auto;
+		display: grid;
+		grid-gap: 10px;
+    	grid-template-columns: 1fr;
+    	grid-template-rows: 1fr 2fr 1fr 1fr 3fr;
+	    grid-template-areas:
+	           "title"
+	           "form"
+	           "..."
+	           "output"
+	           "...";
+	    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	}
+
+	.title {
+		color: #00aced;/*white; /*#305A72;*/
+		grid-area: title;
+		font-size: 120%;
+	}
+	.form {
+		grid-area: form;
+	}
+
+	/* Outer Grid computer */
+	@media screen and (min-width: 1200px) {
+	  .outline {
+			width: 45vw;
+	  }
+	  .title {
+		font-size: 170%;
+	}
+	}

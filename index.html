@@ -2,7 +2,10 @@
 <html>
 <head>
 	<title>Easy Click Tweet</title>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="index.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/jquery.emojipicker.css">
 <script type="text/javascript" src="js/jquery.emojipicker.js"></script>
@@ -11,81 +14,34 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.emojipicker.tw.css">
 <script type="text/javascript" src="js/jquery.emojis.js"></script>
 
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 </head>
+
 <body>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+      $('#textarea').emojiPicker();
+	});
+</script>
 
 <div class="outline">
 	<div class="title">Easy Click Tweet</div>
 	<div>
-		<!--<form class="form" action="#"><!- onsubmit="test();" -->
 			<textarea id="textarea" class="field-style" rows="6" cols="82" maxlength="140" placeholder="Message to tweet to the masses"></textarea><br>
 			<div id="line">
-				<div id="button"><button id="click" >Get Link!</button><!-- <input id="submit" type="submit" value="Get Link!" onClick="test();" /> --></div>
+				<div id="button"><button id="click" >Get Link!</button></div>
 				<div id="textarea_feedback"></div>
 			</div>
-<!-- 		</form>
- -->	</div>
+			<div id="out" class="output"></div>
+	</div>
 </div>
 
 <footer style="font-size: 12px; text-align: center;">© Isha Mehrotra</footer>
-<!-- move footer? -->
 
 
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
- -->
 <script type="text/javascript">
-	$(document).ready(function() {
-
-      // $('#create').click(function(e) {
-      //   e.preventDefault();
-      //   $('#text-custom-trigger').emojiPicker({
-      //     width: '300px',
-      //     height: '200px',
-      //     button: false
-      //   });
-      // });
-      $('#textarea').emojiPicker();
-
-
-	    var text_max = 140;
-	    $('#textarea_feedback').html(text_max + ' characters remaining');
-	    $('#textarea_feedback').attr("style", "font-size:16px; color:white;");
-	    $('#textarea').keyup(function() {
-	        var text_length = $('#textarea').val().length;
-	        var text_remaining = text_max - text_length;
-	        $('#textarea_feedback').html(text_remaining + ' characters remaining');
-	    // console.log(document.getElementById("textarea").value);
-	    });
-	});
-
-// on click event...or rather submit form...
-
-$(document).on('click', '#click', function() {
-	var string = document.getElementById("textarea").value;
-	// console.log(string);
-	var res = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(string);
-	console.log(res);
-	urlshort(res);
-});
-
-
-//retweet functionality
-
-//url shortener
-function urlshort(res) {
-$.ajax({
-        url: 'https://www.googleapis.com/urlshortener/v1/url?shortUrl=http://goo.gl/fbsS&key=AIzaSyBFmYcn3yahS8ao6Zabkc7kaRbfEs_sIhE',
-        type: 'POST',
-        contentType: 'application/json; charset=utf-8',
-        data: '{ longUrl: "' + res +'"}',
-        dataType: 'json',
-        success: function(response) {
-            // console.log(response);
-            console.log(response.id);
-        }
-     });
-}
-
 // TO DO
 // da fuq
 // parse for # and url
@@ -94,82 +50,7 @@ $.ajax({
 // retweet functionality
 // emoji keyboard
 // auto shorten urls
-
-
 </script>
-
-<style type="text/css">
-#line {
-		display: grid;
-		grid-gap: 10px;
-    	grid-template-columns: 1fr 1.5fr 1fr;
-	    grid-template-areas:
-	           "button ... char";
-}
-#button {
-	grid-area: button;
-}
-#textarea_feedback {
-	grid-area: char;
-}
-	.body {
-		background: #3c4149;
-	}
-	.outline {
-		background-color: #3c4149;/*#00aced;/*#34373d;/*#103268;*/
-		border-radius: 10px;
-		padding: 20px;
-		font-size: 150%;
-		width: 70vw;
-		height: 100vh;
-		margin: 20px auto;
-		display: grid;
-		grid-gap: 10px;
-    	grid-template-columns: 1fr;
-    	grid-template-rows: 1fr 2fr 5fr;
-	    grid-template-areas:
-	           "title"
-	           "form"
-	           "...";
-/*	    background: #FAFAFA;
-*/	    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-/*	    border: 6px solid #305A72;
-*/	}
-	/* Outer Grid computer */
-	@media screen and (min-width: 900px) {
-	  .outline {
-			width: 40vw;
-	  }
-	}
-	.title {
-		color: white; /*#305A72;*/
-		grid-area: title;
-/*		height: 10vh;
-*/		font-size: 170%;
-	}
-	.form {
-		grid-area: form;
-/*		height: 20vh;
-*/	}
-/*	.blank {
-		height: 70vh;
-	}*/
-	input[type="submit"] {
-	    -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
-	    -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
-	    box-shadow: inset 0px 1px 0px 0px #3985B1;
-	    background-color: #00aced;/*#216288;*/
-	    border: 1px solid #17445E;
-	    display: inline-block;
-	    cursor: pointer;
-	    color: #FFFFFF;
-	    padding: 8px 18px;
-	    text-decoration: none;
-	    font: 16px Arial, Helvetica, sans-serif;
-	}
-</style>
-
-
 
 </body>
 </html>
